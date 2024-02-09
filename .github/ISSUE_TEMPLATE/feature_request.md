@@ -1,20 +1,42 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
+name: フィーチャーリクエスト
+about: 新機能の提案やアイデアを共有してください
+title: "[FEATURE] "
+labels: enhancement
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## 概要
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+新機能の提案や、追加したい機能について簡潔に説明してください。
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## 背景
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+この機能が必要とされる背景や、この問題を解決することの重要性について説明してください。
+
+## 提案詳細
+
+提案される機能についての具体的な説明をしてください。可能であれば、技術的な詳細や実装に関する考察も含めてください。
+
+## TODOリスト
+
+- [ ] タスク1
+- [ ] タスク2
+- [ ] タスク3
+
+## 関連イシューやバックログ
+
+- 関連するイシューやバックログがあれば、ここにリンクを記載してください。
+
+## キャプチャやスクリーンショット
+
+- UI変更を伴う場合は、キャプチャやスクリーンショットをここに添付してください。
+
+## Figmaリンクやデザインファイル
+
+- Figmaでのデザインファイルやプロトタイプがある場合は、ここにリンクを記載してください。
+
+## その他のコンテキスト
+
+- この提案に関連するその他の情報やコンテキストがあれば、ここに追記してください。
