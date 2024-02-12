@@ -1,8 +1,19 @@
-And Design [https://ant.design/docs/](https://ant.design/docs/) のドキュメント
+
+# Ant Design
+
+## [https://ant.design/docs/](https://ant.design/docs/) のドキュメント
+
+### 公式
+
+[Ant Design - The world's second most popular React UI framework](https://ant.design/)
+
+- [Design](https://ant.design/docs/spec/introduce)
+- [Develop](https://ant.design/docs/react/introduce)
+- [Components](https://ant.design/components/overview/)
 
 ## Ant Design の利用方法
 
-Vite や Next などの React プロジェクトで Ant Design の使用を開始するには、次の手順に従います。
+Vite や Next などの React プロジェクトで Ant Design の使用を開始する場合
 
 ```bash
 npm install antd --save
@@ -10,7 +21,7 @@ npm install antd --save
 yarn add antd
 ```
 
-基本的な書き方、ボタンの例。このサンプルでは、さまざまなタイプのボタンを使用しています。
+基本的な書き方、ボタンの例。このサンプルではさまざまなタイプのボタンを使用しています。
 
 ```bash
 import { Button } from 'antd';
@@ -39,16 +50,16 @@ Ant Design は、デフォルトで 3 つのプリセットアルゴリズムを
 
 ConfigProvider 内の theme の algorithm プロパティを変更することで、アルゴリズムを切り替えることができます。
 
-例えば以下のように、ダークアルゴリズムを適用するには、
-`<ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>...</ConfigProvider>`
-と設定します。
-これにより、全体のテーマがダークモードに切り替わります。
+例えば以下のように、ダークアルゴリズムを適用するには
 
-さらに、テーマを切り替えるためには
+```tsx
+<ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>...</ConfigProvider>
+```
 
-ConfigProvider の theme プロパティを動的に変更することができます。例えば、ユーザーがボタンをクリックすると、テーマがダークモードからライトモードに切り替わるような機能を実装することが可能です。
+と設定します。これにより、全体のテーマがダークモードに切り替わります。<br/>
+さらに、テーマを切り替えるためにはConfigProvider の theme プロパティを動的に変更することができます。
 
-例えばこのようなコードになります
+例えば、ユーザーがボタンをクリックすると、テーマがダークモードからライトモードに切り替わるような機能を実装することが可能です。例えばこのようなコードになります。
 
 ```jsx
 import { ConfigProvider, Button } from "antd";
@@ -75,30 +86,81 @@ const App = () => {
 export default App;
 ```
 
-このコードでは、ボタンをクリックすると、テーマがダークモードとライトモードで切り替わります。
+ただ、この状態ですとボタン自体の色が変わることは分かりますが、期待していたような背景色も全て変わるような挙動ではありませんでした。
 
-## Ant Design のカスタマイズ
+そこで、もう一つのテーマ`defaultAlgorithm`を設定し、Buttonの大きさが変わる事を確認します。
 
-Ant Design は、自分のニーズに合わせてカスタマイズすることが可能です。例えば、以下のようにスタイル変数を上書きすることで、テーマを自分好みに調整できます。
+<details>
 
-```jsx
-const { override } = require("customize-cra");
+<summary>Switch Theme</summary>
 
-module.exports = override(
-  adjustStyleLoaders((rule) => {
-    // 既存のruleを見つける（scssとsass）
-    if (rule.test.toString().includes("scss")) {
-      rule.use.push({
-        loader: "sass-resources-loader",
-        options: {
-          resources: ["./src/styles/theme.scss"], // ここに自分のスタイルを指定
-        },
-      });
-    }
-  }),
-);
+### You can add a header
+
+```tsx
+import {
+  ConfigProvider,
+  Space,
+  Button,
+  theme,
+  Row,
+  Typography,
+  Col,
+  Flex
+} from 'antd'
+
+import React, { useState } from 'react'
+
+const ToggleTheme: React.FC = () => {
+  const [changeMode, setChangeMode] = useState(false)
+
+  const switchTheme = () => {
+    setChangeMode(!changeMode)
+  }
+
+  return (
+    <ConfigProvider
+      theme={{
+        algorithm: changeMode ? theme.compactAlgorithm : theme.defaultAlgorithm,
+        token: {
+          // Seed Token
+          colorPrimary: '#00b96b',
+          borderRadius: 2,
+          // Alias Token
+          colorBgContainer: '#f6ffed'
+        }
+      }}
+    >
+      <Typography.Title level={1}>Ant Design</Typography.Title>
+      <Flex vertical gap={24}>
+        <Row gutter={16}>
+          <Col>
+            <Space>
+              <Button
+                onClick={switchTheme}
+                type={!changeMode ? 'primary' : 'dashed'}
+              >
+                {!changeMode ? 'to compactAlgorithm' : 'to defaultAlgorithm'}
+              </Button>
+            </Space>
+          </Col>
+        </Row>
+
+        <Row gutter={16}>
+          <Col>
+            <Space>
+              <Button>Default Button</Button>
+              <Button type="primary">Button</Button>
+              <Button type="dashed">Dashed Button</Button>
+              <Button type="link">Link Button</Button>
+            </Space>
+          </Col>
+        </Row>
+      </Flex>
+    </ConfigProvider>
+  )
+}
+
+export default ToggleTheme
 ```
 
-上記のコードでは、`customize-cra`と`sass-resources-loader`を使用して、全ての SCSS ファイルに共通のスタイルを適用しています。
-
-Ant Design を使用すれば、自分のプロジェクトに合わせてデザインを調整しながら、エンタープライズ級の UI を効率的に開発することが可能です。詳細なカスタマイズ方法や、その他の機能については公式ドキュメンテーションをご覧ください。
+</details>
