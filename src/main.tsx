@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import  App  from "./App.tsx";
+import ToggleTheme from "./ToggleTheme.tsx";
 import "./index.css";
+import App from "./App.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
+    <ToggleTheme />
   </React.StrictMode>
 );
