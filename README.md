@@ -164,3 +164,20 @@ export default ToggleTheme
 ```
 
 </details>
+
+## DarkMode Toggle
+
+[Basic Layout / DarkMode Toggle / theme.ts](https://shrtm.nu/skT)
+
+- 今回のコミットで、いわゆる管理画面のようなベーシックなレイアウトを組みました
+  - サイドナビの幅はToggle
+  - レイアウトのメインにコンテンツコンポーネントの作成
+
+- カラーテーマ、DakrMode切り替えの基盤設置
+  - 簡単なテーマファイルの作成
+  - テーマプロバイダの作成
+  - トリガーとなるテーマ切り替えアイコンの設定
+  - 現状のデザインにLight/DarkのテーマToggleの反映
+  - サイドナビ背景など、切り替えに影響されない固定のカラーも設定
+
+![](https://shrtm.nu/skW)
