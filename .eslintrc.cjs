@@ -14,7 +14,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'eslintmultiline-ternary': 'off'
   },
   ignorePatterns: [
     'node_modules/',

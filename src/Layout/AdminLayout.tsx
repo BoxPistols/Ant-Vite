@@ -30,7 +30,7 @@ const AdminLayout = ({ children }: AppProps) => {
           <Typography.Title level={3} style={{ margin: 0 }}>
             Admin
           </Typography.Title>
-          <ToggleThemeSwitcher />
+          <ToggleThemeSwitcher colorMoon={'black'} colorSun={'white'} />
         </Header>
         <Content
           style={{

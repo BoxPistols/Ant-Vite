@@ -1,8 +1,11 @@
-import AdminLayout from './Layout/AdminLayout'
 import { ConfigProvider } from 'antd'
+import { Routes, Route } from 'react-router-dom'
+import AdminLayout from './Layout/AdminLayout'
 import { useTheme } from './ThemeContext'
 import { darkTheme, lightTheme } from './util/theme'
 import Content from './Layout/Content'
+import Home from './Pages/Home'
+import Dashboard from './Pages/DashBoard'
 
 const App = () => {
   const { darkMode } = useTheme()
@@ -13,7 +16,12 @@ const App = () => {
   return (
     <ConfigProvider theme={currentTheme}>
       <AdminLayout>
-        <Content />
+        <Content>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </Content>
       </AdminLayout>
     </ConfigProvider>
   )

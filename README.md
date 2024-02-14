@@ -181,3 +181,9 @@ export default ToggleTheme
   - サイドナビ背景など、切り替えに影響されない固定のカラーも設定
 
 ![](https://shrtm.nu/skW)
+
+---
+
+## Router設定
+
+- yarn add react-router-dom@6
