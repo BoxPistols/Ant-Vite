@@ -7,8 +7,8 @@ import {
   MenuUnfoldOutlined
 } from '@ant-design/icons'
 import { Button, Flex, Layout, Menu, Typography } from 'antd'
-import ToggleThemeSwitcher from '../ToggleThemeSwitcher'
-import Link from 'antd/es/typography/Link'
+import { Link } from 'react-router-dom'
+// import Home from '../Pages/Home'
 
 const { Sider } = Layout
 
@@ -22,7 +22,7 @@ const SideBar: React.FC<SideBarProps> = () => {
   const siderWidth = 200 // 折りたたまれていないときのサイドバーの幅
 
   return (
-    <div className="sidebar">
+    <>
       <Sider
         trigger={null}
         collapsible
@@ -33,17 +33,17 @@ const SideBar: React.FC<SideBarProps> = () => {
           minHeight: '100vh'
         }}
       >
-        <Link href="/">
-          <Typography.Title
-            level={3}
-            style={{
-              color: 'white',
-              margin: 8
-            }}
-          >
-            LOGO
-          </Typography.Title>
-        </Link>
+        <Typography.Title
+          level={3}
+          style={{
+            color: 'white',
+            margin: 8,
+            fontSize: collapsed ? 16 : 24
+          }}
+        >
+          <Link to="/">LOGO</Link>
+        </Typography.Title>
+
         <Menu
           theme="dark"
           mode="inline"
@@ -52,12 +52,12 @@ const SideBar: React.FC<SideBarProps> = () => {
             {
               key: '1',
               icon: <UserOutlined />,
-              label: 'nav 1'
+              label: <Link to="/dashboard">Dashoard</Link>
             },
             {
               key: '2',
               icon: <VideoCameraOutlined />,
-              label: 'nav 2'
+              label: <Link to="/home">Home</Link>
             },
             {
               key: '3',
@@ -72,6 +72,7 @@ const SideBar: React.FC<SideBarProps> = () => {
           ]}
         />
       </Sider>
+
       <Flex
         style={{
           position: 'absolute',
@@ -81,7 +82,6 @@ const SideBar: React.FC<SideBarProps> = () => {
         }}
         align="center"
       >
-        <ToggleThemeSwitcher />
         <Button
           type="text"
           icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -94,7 +94,7 @@ const SideBar: React.FC<SideBarProps> = () => {
           }}
         />
       </Flex>
-    </div>
+    </>
   )
 }
 
