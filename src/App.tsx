@@ -6,6 +6,7 @@ import { darkTheme, lightTheme } from './util/theme'
 import Content from './Layout/Content'
 import Home from './Pages/Home'
 import Dashboard from './Pages/DashBoard'
+import Columns from './Pages/Columns'
 
 const App = () => {
   const { darkMode } = useTheme()
@@ -20,6 +21,7 @@ const App = () => {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/columns" element={<Columns />} />
           </Routes>
         </Content>
       </AdminLayout>

@@ -62,7 +62,7 @@ const SideBar: React.FC<SideBarProps> = () => {
             {
               key: '3',
               icon: <UploadOutlined />,
-              label: 'nav 3'
+              label: <Link to="/columns">Columns</Link>
             },
             {
               key: '4',
