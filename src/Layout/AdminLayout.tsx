@@ -36,7 +36,7 @@ const AdminLayout = ({ children }: AppProps) => {
           style={{
             margin: 20,
             padding: 32,
-            background: 'darkgray'
+            background: '#c3d6e9'
           }}
         >
           {children}
