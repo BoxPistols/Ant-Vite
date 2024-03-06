@@ -1,38 +1,66 @@
 import { Row, Col, Typography } from 'antd'
 
-interface ColumnsProps {
-  children?: React.ReactNode
-}
-
-const Columns: React.FC<ColumnsProps> = ({}) => {
-  const sectionAuthorInformation1 = 'ここにセクション1の情報を記述'
-  const departmentAuthorInformation1 = 'ここに部署1の情報を記述'
-  const sectionAuthorInformation2 = 'ここにセクション2の情報を記述'
-  const departmentAuthorInformation2 = 'ここに部署2の情報を記述'
+const Columnsol = () => {
+  const sectionAuthorInformation1 = 'Section Author Information 1'
 
   return (
-    <div>
+    <div style={{ overflowX: 'auto' }}>
       <Row gutter={[16, 24]}>
-        {/* Left 1 */}
-        <Col span={6}>
-          <Typography color="secondary">担当部署</Typography>
+        <Col>
+          <Typography color="secondary">変更あり！担当部署</Typography>
           <Typography>{sectionAuthorInformation1}</Typography>
         </Col>
-        <Col span={6}>
-          <Typography color="secondary">担当部署B</Typography>
-          <Typography>{departmentAuthorInformation1}</Typography>
-        </Col>
-        <Col span={6}>
-          <Typography color="secondary">担当部署C</Typography>
-          <Typography>{sectionAuthorInformation2}</Typography>
-        </Col>
-        <Col span={6}>
-          <Typography color="secondary">担当部署D</Typography>
-          <Typography>{departmentAuthorInformation2}</Typography>
+        <Col
+          style={{
+            display: 'flex',
+            minWidth: 960,
+            overflowX: 'auto'
+          }}
+        >
+          <div
+            style={{
+              flex: '1 0 50%',
+              padding: '0 12px',
+              flexWrap: 'nowrap',
+              minWidth: 400
+            }}
+          >
+            <Typography color="secondary">Left Area</Typography>
+            <Row gutter={[24, 24]}>
+              <Col span={12}>
+                <Typography color="secondary">担当部署</Typography>
+                <Typography>{sectionAuthorInformation1}</Typography>
+              </Col>
+              <Col span={12}>
+                <Typography color="secondary">担当部署</Typography>
+                <Typography>{sectionAuthorInformation1}</Typography>
+              </Col>
+            </Row>
+          </div>
+          <div
+            style={{
+              flex: '1 0 50%',
+              padding: '0 12px',
+              flexWrap: 'nowrap',
+              minWidth: 400
+            }}
+          >
+            <Typography color="secondary">Right Area</Typography>
+            <Row gutter={[24, 24]}>
+              <Col span={12}>
+                <Typography color="secondary">担当部署</Typography>
+                <Typography>{sectionAuthorInformation1}</Typography>
+              </Col>
+              <Col span={12}>
+                <Typography color="secondary">担当部署</Typography>
+                <Typography>{sectionAuthorInformation1}</Typography>
+              </Col>
+            </Row>
+          </div>
         </Col>
       </Row>
     </div>
   )
 }
 
-export default Columns
+export default Columnsol
