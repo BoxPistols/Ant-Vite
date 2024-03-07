@@ -7,6 +7,7 @@ import Content from './Layout/Content'
 import Home from './Pages/Home'
 import Dashboard from './Pages/DashBoard'
 import Columns from './Pages/Columns'
+import NotFound from './Pages/Notfound'
 
 const App = () => {
   const { darkMode } = useTheme()
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/columns" element={<Columns />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Content>
       </AdminLayout>
