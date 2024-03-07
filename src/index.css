@@ -49,3 +49,19 @@ h1 {
       color: #747bff;
     }
   } */
+
+/* スクロールバーを常に表示 */
+/* ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: teal;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: tomato;
+} */

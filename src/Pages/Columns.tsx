@@ -1,66 +1,51 @@
-import { Row, Col, Typography } from 'antd'
+import { Row, Col, Card } from 'antd'
 
-const Columnsol = () => {
-  const sectionAuthorInformation1 = 'Section Author Information 1'
+const { Meta } = Card
 
+const Columns = () => {
   return (
-    <div style={{ overflowX: 'auto' }}>
-      <Row gutter={[16, 24]}>
-        <Col>
-          <Typography color="secondary">変更あり！担当部署</Typography>
-          <Typography>{sectionAuthorInformation1}</Typography>
-        </Col>
+    <Row
+      gutter={[16, 16]}
+      style={{
+        display: 'flex',
+        flexWrap: 'nowrap',
+        // justifyContent: 'center'
+        overflowX: 'auto',
+        width: '100%'
+      }}
+    >
+      {Array.from({ length: 4 }, (_, index) => (
         <Col
+          key={index}
+          span={6}
           style={{
-            display: 'flex',
-            minWidth: 960,
-            overflowX: 'auto'
+            maxWidth: 320
+            // minWidth: 240
           }}
         >
-          <div
-            style={{
-              flex: '1 0 50%',
-              padding: '0 12px',
-              flexWrap: 'nowrap',
-              minWidth: 400
-            }}
-          >
-            <Typography color="secondary">Left Area</Typography>
-            <Row gutter={[24, 24]}>
+          <Card>
+            <Meta
+              title={`カード ${index + 1} タイトル`}
+              style={{
+                marginBottom: 8,
+                backgroundColor: 'lightgreen',
+                padding: '4px 16px'
+              }}
+            />
+            <Row gutter={[8, 4]}>
               <Col span={12}>
-                <Typography color="secondary">担当部署</Typography>
-                <Typography>{sectionAuthorInformation1}</Typography>
+                <Card style={{ backgroundColor: 'lightcoral' }} />
               </Col>
               <Col span={12}>
-                <Typography color="secondary">担当部署</Typography>
-                <Typography>{sectionAuthorInformation1}</Typography>
+                <Card style={{ backgroundColor: 'lightcoral' }} />
               </Col>
             </Row>
-          </div>
-          <div
-            style={{
-              flex: '1 0 50%',
-              padding: '0 12px',
-              flexWrap: 'nowrap',
-              minWidth: 400
-            }}
-          >
-            <Typography color="secondary">Right Area</Typography>
-            <Row gutter={[24, 24]}>
-              <Col span={12}>
-                <Typography color="secondary">担当部署</Typography>
-                <Typography>{sectionAuthorInformation1}</Typography>
-              </Col>
-              <Col span={12}>
-                <Typography color="secondary">担当部署</Typography>
-                <Typography>{sectionAuthorInformation1}</Typography>
-              </Col>
-            </Row>
-          </div>
+            <Card style={{ backgroundColor: 'lightblue', marginTop: 8 }} />
+          </Card>
         </Col>
-      </Row>
-    </div>
+      ))}
+    </Row>
   )
 }
 
-export default Columnsol
+export default Columns
