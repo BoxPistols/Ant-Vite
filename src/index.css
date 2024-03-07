@@ -60,8 +60,8 @@ h1 {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: teal;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: tomato;
 } */
