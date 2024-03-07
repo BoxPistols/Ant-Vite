@@ -8,7 +8,7 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({ children, text = 'Hello' }) => {
   return (
     <>
-      <Typography.Title level={2}>Content Component</Typography.Title>
+      <Typography.Title level={2}>Content Comp</Typography.Title>
       <Typography>{text}</Typography>
       {text === 'Hello' && <Typography>Default text is used</Typography>}
       {children}
